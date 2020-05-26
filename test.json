@@ -1,0 +1,24 @@
+{
+  "board": {
+    "type": "line",
+    "numOfSquares": 50
+  },
+  "successCondition": {
+    "type": "SuccessConditionSnake"
+  },
+  "players": [
+    {
+      "name": "Greg"
+    },
+    {
+      "name": "Alex"
+    },
+    {
+      "name": "Konstantinos"
+    }
+  ],
+  "dice": {
+    "numberOfDices": 1,
+    "diceCapacity": 6
+  }
+}

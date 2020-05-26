@@ -1,0 +1,35 @@
+{
+    "numOfSquares": 50,
+    "boardType": "simple",
+    "successCondition": "SuccessConditionSnake",
+    "specialSquares": [
+      {
+        "type": "SquareMovement",
+        "steps": 10,
+        "position": 15
+      },
+      {
+        "type": "SquareLoseTurn",
+        "position": 20
+      },
+      {
+        "type": "SquareMovement",
+        "steps": -5,
+        "position": 45
+      }
+    ],
+    "players": [
+      {
+        "name": "Greg",
+        "position": 0
+      },
+      {
+        "name": "Alex",
+        "position": 0
+      },
+      {
+        "name": "Konstantinos",
+        "position": 0
+      }
+    ]
+}
