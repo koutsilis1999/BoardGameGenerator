@@ -1,5 +1,6 @@
 package org.example.model.boards;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.games.Game;
 import org.example.model.players.Player;
 import org.example.model.squares.SimpleSquare;
@@ -15,7 +16,7 @@ public class BoardLine extends Board {
     public BoardLine() {
     }
 
-  /* public BoardLine(int numOfSquares) {
+   public BoardLine(int numOfSquares) {
         //Probably this list will be in the json file so no worries
         //TODO fix squareBackward/Forward leading to another squareBackward/Forward because its random
         //TODO fix duplicate randoms numbers in squaresForwardList/Backward
@@ -45,13 +46,14 @@ public class BoardLine extends Board {
                 this.squareList.set(i, new SquareMovement(steps));
             }
         }
-    }*/
+    }
 
     @Override
     public List getSquareList() {
         return this.squareList;
     }
 
+    @JsonIgnore
     @Override
     public void movePlayer(Game game, int steps) {
         int position;

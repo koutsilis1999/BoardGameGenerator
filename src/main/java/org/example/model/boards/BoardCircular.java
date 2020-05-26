@@ -1,5 +1,6 @@
 package org.example.model.boards;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.games.Game;
 import org.example.model.players.Player;
 import org.example.model.squares.SimpleSquare;
@@ -11,8 +12,8 @@ import java.util.*;
 import static java.lang.StrictMath.abs;
 
 public class BoardCircular extends Board {
-    private String type="circular";
-    /*public BoardCircular(int numOfSquares) {
+
+    public BoardCircular(int numOfSquares) {
         //TODO add SquareLoseTurn
         squareList = new ArrayList<>();
         Random random = new Random();
@@ -27,7 +28,7 @@ public class BoardCircular extends Board {
                 squareList.add(new SimpleSquare());
             }
         }
-    }*/
+    }
 
     public BoardCircular() {
     }
@@ -37,6 +38,7 @@ public class BoardCircular extends Board {
         return this.squareList;
     }
 
+    @JsonIgnore
     @Override
     public void movePlayer(Game game, int steps) {
         int position;
