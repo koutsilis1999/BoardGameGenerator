@@ -10,8 +10,11 @@ public class PlayerList {
     private LinkedList<Player> playerLinkedList = new LinkedList<>();
     private Player currentPlayer;
 
+    public PlayerList() {
+    }
+
     public PlayerList(List<Player> playerList) {
-        this.playerLinkedList= (LinkedList<Player>) playerList;
+        this.playerLinkedList = (LinkedList<Player>) playerList;
         currentPlayer = playerLinkedList.poll();
     }
 
@@ -26,7 +29,7 @@ public class PlayerList {
         }
         currentPlayer = playerLinkedList.poll();
         assert currentPlayer != null;
-        if (!currentPlayer.isPlayersTurn() && currentPlayer!= null) {
+        if (!currentPlayer.isPlayersTurn() && currentPlayer != null) {
             currentPlayer.setPlayersTurn(true);
             return getNextPlayer();
         } else {
@@ -36,7 +39,7 @@ public class PlayerList {
 
     public Player removePlayer() {
         playerLinkedList.offer(currentPlayer);
-        currentPlayer= null;
+        currentPlayer = null;
         return playerLinkedList.pollLast();
 
     }
@@ -48,7 +51,16 @@ public class PlayerList {
     public void currentPlayerLoseTurn() {
         currentPlayer.setPlayersTurn(false);
     }
-    public LinkedList<Player> getPlayerList(){
+
+    public LinkedList<Player> getPlayerList() {
         return playerLinkedList;
+    }
+
+    public void setPlayer(Player player) {
+        if (playerLinkedList.isEmpty() &&currentPlayer==null ) {
+            currentPlayer = player;
+        } else {
+            playerLinkedList.offer(player);
+        }
     }
 }

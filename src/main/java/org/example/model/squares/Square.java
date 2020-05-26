@@ -14,7 +14,8 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = SimpleSquare.class, name = "SimpleSquare"),
         @JsonSubTypes.Type(value = SquareMovement.class, name = "SquareMovement"),
-        @JsonSubTypes.Type(value = SquareCard.class, name = "SquareCard")
+        @JsonSubTypes.Type(value = SquareCard.class, name = "SquareCard"),
+        @JsonSubTypes.Type(value =  SquareLoseTurn.class, name = "SquareLoseTurn")
 })
 public interface Square {
     //na ginei abstract kai na exoume ena String gia ola ?

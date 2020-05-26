@@ -1,5 +1,6 @@
 package org.example.model.successCondition;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.model.boards.Board;
 import org.example.games.Game;
 import org.example.model.players.Player;
@@ -9,6 +10,7 @@ public class SuccessConditionSnake implements SuccessCondition {
     public SuccessConditionSnake() {
     }
 
+    @JsonIgnore
     @Override
     public Status getSuccessCondition(Game game) {
         Player player = game.getCurrentPlayer();

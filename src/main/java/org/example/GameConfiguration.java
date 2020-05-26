@@ -1,20 +1,16 @@
-package org.example.json;
+package org.example;
 
 import org.example.model.Dice;
 import org.example.model.boards.Board;
-import org.example.model.players.Player;
 import org.example.model.successCondition.SuccessCondition;
-
-
-import java.util.List;
 
 public class GameConfiguration {
     private Board board;
     private SuccessCondition successCondition;
-    private List<Player> players;
+    private PlayerList players;
     private Dice dice;
 
-    public GameConfiguration(Board board, SuccessCondition successCondition, List<Player> players, Dice dice) {
+    public GameConfiguration(Board board, SuccessCondition successCondition, PlayerList players, Dice dice) {
         this.board = board;
         this.successCondition = successCondition;
         this.players = players;
@@ -40,11 +36,11 @@ public class GameConfiguration {
         this.successCondition = successCondition;
     }
 
-    public List<Player> getPlayers() {
+    public PlayerList getPlayers() {
         return players;
     }
 
-    public void setPlayers(List<Player> players) {
+    public void setPlayers(PlayerList players) {
         this.players = players;
     }
 
