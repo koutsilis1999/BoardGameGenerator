@@ -17,7 +17,7 @@ public class BoardCircular extends Board {
         //TODO add SquareLoseTurn
         squareList = new ArrayList<>();
         Random random = new Random();
-        List cardList = new ArrayList();
+        List<Integer> cardList = new ArrayList<Integer>();
         for (int i = 0; i < numOfSquares / 2; i++) {
             cardList.add(random.nextInt(numOfSquares - 1) + 1);
         }

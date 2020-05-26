@@ -1,5 +1,6 @@
 package org.example;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.games.Game;
 import org.example.model.Dice;
 import org.example.model.boards.Board;
@@ -25,22 +26,17 @@ public class App {
         Dice dice = new Dice(1,6);
 
 
-
-
         Game game = new Game(board,playerList,successCondition, dice);
-        game.startGame();
+       // game.startGame();
+
 
         // GameConfiguration gameConfiguration= new ObjectMapper().readValue( new FileReader(new File("test.json")),GameConfiguration.class);
         //String json = new ObjectMapper().writeValueAsString(gameConfiguration);
         // System.out.println(json);
 
-       // ObjectMapper mapper = new ObjectMapper();
-       // ObjectMapper configure = mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-        //SuccessCondition successCondition = new SuccessConditionSnake();
-       // String json = configure.writeValueAsString(successCondition);
-        //Board board = new BoardLine(5);
-        //String json = mapper.writeValueAsString(board);
-        //System.out.println(json);
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(board);
+        System.out.println(json);
 
 
     }

@@ -1,6 +1,7 @@
 package org.example.model.squares;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.example.games.Game;
@@ -20,6 +21,7 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 public interface Square {
     //na ginei abstract kai na exoume ena String gia ola ?
     void action(Game game);
+
     String getMessage();
 
 }

@@ -11,15 +11,13 @@ import java.util.List;
 import java.util.Random;
 
 public class BoardLine extends Board {
-    private String type="line";
-
     public BoardLine() {
     }
 
    public BoardLine(int numOfSquares) {
         //Probably this list will be in the json file so no worries
-        //TODO fix squareBackward/Forward leading to another squareBackward/Forward because its random
-        //TODO fix duplicate randoms numbers in squaresForwardList/Backward
+       //TODO make Boardline take a list of squares instead of creating it
+
         this.squareList = new ArrayList<>();
         Random random = new Random();
         int steps;
