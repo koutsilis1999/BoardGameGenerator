@@ -2,16 +2,20 @@ package org.example.model.players;
 
 import org.example.model.squares.Square;
 
-public  class Player {
+public class Player {
     private String name;
     private Square currentSquare;
-    private boolean playersTurn=true;
-    private int power=0;
+    private boolean playersTurn = true;
+    private int power = 0;
 
 
-    public Player(String name,Square currentSquare) {
+    public Player(String name) {
         this.name = name;
-        this.currentSquare=currentSquare;
+    }
+
+    public Player(String name, Square currentSquare) {
+        this.name = name;
+        this.currentSquare = currentSquare;
     }
 
     public Player() {
@@ -37,13 +41,17 @@ public  class Player {
     public void setPlayersTurn(boolean playersTurn) {
         this.playersTurn = playersTurn;
     }
-    public void powerUp(int power){
-        this.power+=power;
+
+    public void powerUp(int power) {
+        this.power += power;
     }
-    public int getPower(){
+
+    public int getPower() {
         return power;
     }
-    public void action(){}
+
+    public void action() {
+    }
 
 
     public void setName(String name) {

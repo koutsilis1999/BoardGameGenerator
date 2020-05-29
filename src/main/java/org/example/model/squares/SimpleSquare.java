@@ -1,16 +1,19 @@
 package org.example.model.squares;
 
 
-        import com.fasterxml.jackson.annotation.JsonIgnore;
-        import org.example.games.Game;
+import com.fasterxml.jackson.annotation.*;
+import org.example.games.Game;
 
-public  class SimpleSquare implements Square {
+public class SimpleSquare implements Square {
 
-    public SimpleSquare(){
+    @JsonCreator
+    public SimpleSquare() {
 
     }
 
-    public  void action(Game game){}
+    @JsonIgnore
+    public void action(Game game) {
+    }
 
     @JsonIgnore
     @Override

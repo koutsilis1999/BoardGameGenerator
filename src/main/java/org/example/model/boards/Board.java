@@ -1,9 +1,7 @@
 package org.example.model.boards;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.*;
 import org.example.games.Game;
 import org.example.model.squares.SimpleSquare;
 import org.example.model.squares.Square;
@@ -16,13 +14,13 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 
 @JsonTypeInfo(use = NAME, include = PROPERTY)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value=BoardCircular.class, name = "BordCircular"),
-        @JsonSubTypes.Type(value=BoardLine.class, name = "BoardLine")
+        @JsonSubTypes.Type(value = BoardCircular.class, name = "BordCircular"),
+        @JsonSubTypes.Type(value = BoardLine.class, name = "BoardLine")
 })
 public abstract class Board {
     protected List<Square> squareList;
 
-
+    @JsonGetter
     public List getSquareList() {
         return this.squareList;
     }
@@ -40,6 +38,7 @@ public abstract class Board {
         return this.squareList.get(0);
     }
 
+    @JsonSetter
     public void setSquareList(List<Square> squareList) {
         this.squareList = squareList;
     }

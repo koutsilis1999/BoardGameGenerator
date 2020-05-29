@@ -1,22 +1,195 @@
 {
   "board": {
-    "type": "line",
-    "numOfSquares": 50
+    "@type": "BoardLine",
+    "squareList": [
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 8
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 5
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 5
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 9
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 5
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 8
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 6
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      }
+    ]
   },
-  "successCondition": {
-    "type": "SuccessConditionSnake"
-  },
-  "players": [
+  "playerList": [
     {
-      "name": "Greg"
+      "name": "Konstantinos",
+      "currentSquare": {
+        "@type": "SimpleSquare"
+      },
+      "playersTurn": true,
+      "power": 0
     },
     {
-      "name": "Alex"
+      "name": "Greg",
+      "currentSquare": {
+        "@type": "SimpleSquare"
+      },
+      "playersTurn": true,
+      "power": 0
     },
     {
-      "name": "Konstantinos"
+      "name": "Alex",
+      "currentSquare": {
+        "@type": "SimpleSquare"
+      },
+      "playersTurn": true,
+      "power": 0
     }
   ],
+  "successCondition": {
+    "@type": "SuccessConditionSnake"
+  },
   "dice": {
     "numberOfDices": 1,
     "diceCapacity": 6

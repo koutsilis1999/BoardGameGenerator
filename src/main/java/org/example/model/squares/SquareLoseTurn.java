@@ -1,11 +1,14 @@
 package org.example.model.squares;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.example.games.Game;
 
 public class SquareLoseTurn implements Square {
 
+    @JsonCreator
     public SquareLoseTurn() {
     }
 

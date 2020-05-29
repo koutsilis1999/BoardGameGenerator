@@ -1,13 +1,18 @@
 package org.example.model.squares;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import org.example.games.Game;
+
 
 public class SquareMovement implements Square {
     private int steps;
 
-    public SquareMovement(int steps) {
-        this.steps =steps ;
+    @JsonCreator
+    public SquareMovement(@JsonProperty("steps")int steps) {
+        this.steps = steps;
+    }
+
+    public SquareMovement() {
     }
 
     @Override
@@ -18,13 +23,15 @@ public class SquareMovement implements Square {
     @JsonIgnore
     @Override
     public String getMessage() {
-        return  "Wow, you proceed "+steps+" squares";
+        return "Wow, you proceed " + steps + " squares";
     }
 
+    @JsonGetter
     public int getSteps() {
         return steps;
     }
 
+    @JsonSetter
     public void setSteps(int steps) {
         this.steps = steps;
     }

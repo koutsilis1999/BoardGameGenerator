@@ -2,18 +2,22 @@ package org.example;
 
 import org.example.model.Dice;
 import org.example.model.boards.Board;
+import org.example.model.players.Player;
 import org.example.model.successCondition.SuccessCondition;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class GameConfiguration {
     private Board board;
     private SuccessCondition successCondition;
-    private PlayerList players;
+    private LinkedList<Player> playerList;
     private Dice dice;
 
-    public GameConfiguration(Board board, SuccessCondition successCondition, PlayerList players, Dice dice) {
+    public GameConfiguration(Board board, SuccessCondition successCondition,LinkedList<Player> playerList, Dice dice) {
         this.board = board;
         this.successCondition = successCondition;
-        this.players = players;
+        this.playerList = playerList;
         this.dice = dice;
     }
 
@@ -36,12 +40,12 @@ public class GameConfiguration {
         this.successCondition = successCondition;
     }
 
-    public PlayerList getPlayers() {
-        return players;
+    public LinkedList<Player> getPlayerList() {
+        return playerList;
     }
 
-    public void setPlayers(PlayerList players) {
-        this.players = players;
+    public void setPlayerList(LinkedList<Player> playerList) {
+        this.playerList = playerList;
     }
 
     public Dice getDice() {

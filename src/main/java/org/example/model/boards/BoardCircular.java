@@ -1,10 +1,12 @@
 package org.example.model.boards;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.example.games.Game;
 import org.example.model.players.Player;
-import org.example.model.squares.SimpleSquare;
-import org.example.model.squares.SquareCard;
+import org.example.model.squares.Square;
 
 
 import java.util.*;
@@ -12,31 +14,14 @@ import java.util.*;
 import static java.lang.StrictMath.abs;
 
 public class BoardCircular extends Board {
-
-    public BoardCircular(int numOfSquares) {
-        //TODO add SquareLoseTurn
-        squareList = new ArrayList<>();
-        Random random = new Random();
-        List<Integer> cardList = new ArrayList<Integer>();
-        for (int i = 0; i < numOfSquares / 2; i++) {
-            cardList.add(random.nextInt(numOfSquares - 1) + 1);
-        }
-        for (int i = 0; i < numOfSquares; i++) {
-            if (cardList.contains(i)) {
-                squareList.add(new SquareCard());
-            } else {
-                squareList.add(new SimpleSquare());
-            }
-        }
+    @JsonCreator
+    public BoardCircular(@JsonProperty("squareList") List<Square> squareList) {
+        this.squareList = squareList;
     }
 
     public BoardCircular() {
     }
 
-    @Override
-    public List getSquareList() {
-        return this.squareList;
-    }
 
     @JsonIgnore
     @Override
@@ -53,7 +38,5 @@ public class BoardCircular extends Board {
             player.setCurrentSquare(squareList.get(position));
         }
         //player.getPosition().action(game);
-
-
     }
 }

@@ -1,5 +1,7 @@
 package org.example.games;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.example.GameConfiguration;
 import org.example.Status;
 import org.example.model.Dice;
 import org.example.model.boards.Board;
@@ -9,6 +11,7 @@ import org.example.model.successCondition.SuccessCondition;
 
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -23,11 +26,17 @@ public class Game {
     public Game() {
     }
 
-    public Game(Board board, PlayerList playerList, SuccessCondition successCondition, Dice dice) {
+    public Game(Board board, List<Player> playerList, SuccessCondition successCondition, Dice dice) {
         this.board = board;
-        this.playerList = playerList;
+        this.playerList= new PlayerList(playerList);
         this.successCondition = successCondition;
         this.dice = dice;
+    }
+    public Game(GameConfiguration gameConfiguration) {
+        this.board=gameConfiguration.getBoard();
+        this.playerList= new PlayerList(gameConfiguration.getPlayerList());
+        this.successCondition = gameConfiguration.getSuccessCondition();
+        this.dice = gameConfiguration.getDice();
     }
 
     public void moveCurrentPayer(int steps) {
@@ -46,7 +55,7 @@ public class Game {
     public Board getBoard() {
         return board;
     }
-
+@JsonIgnore
     public Player getCurrentPlayer() {
         return playerList.getCurrentPlayer();
     }
@@ -76,6 +85,22 @@ public class Game {
             }
             player = playerList.getNextPlayer();
         } while (status != Status.FINISH);
+    }
+
+    public SuccessCondition getSuccessCondition() {
+        return successCondition;
+    }
+
+    public void setSuccessCondition(SuccessCondition successCondition) {
+        this.successCondition = successCondition;
+    }
+
+    public Dice getDice() {
+        return dice;
+    }
+
+    public void setDice(Dice dice) {
+        this.dice = dice;
     }
     // abstract public void finishGame();
 
