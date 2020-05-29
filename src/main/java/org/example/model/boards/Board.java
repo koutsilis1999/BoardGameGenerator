@@ -14,7 +14,7 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 
 @JsonTypeInfo(use = NAME, include = PROPERTY)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = BoardCircular.class, name = "BordCircular"),
+        @JsonSubTypes.Type(value = BoardCircular.class, name = "BoardCircular"),
         @JsonSubTypes.Type(value = BoardLine.class, name = "BoardLine")
 })
 public abstract class Board {
