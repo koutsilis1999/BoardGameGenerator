@@ -19,6 +19,11 @@ public class PlayerList {
         currentPlayer = this.playerList.poll();
     }
 
+    public PlayerList( Player currentPlayer,LinkedList<Player> playerList) {
+        this.currentPlayer = currentPlayer;
+        this.playerList = playerList;
+    }
+
     public Player getCurrentPlayer() {
         return currentPlayer;
     }

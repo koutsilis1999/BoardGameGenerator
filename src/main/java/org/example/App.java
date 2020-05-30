@@ -7,6 +7,7 @@ import org.example.games.Game;
 import org.example.model.Dice;
 import org.example.model.boards.Board;
 import org.example.model.boards.BoardLine;
+import org.example.model.cards.Card;
 import org.example.model.players.Player;
 import org.example.model.squares.SimpleSquare;
 import org.example.model.squares.Square;
@@ -34,20 +35,20 @@ public class App {
         playerList.add(player2);
         playerList.add(player3);
         SuccessCondition successCondition = new SuccessConditionSnake();
+        List<Card> cardList = new DeckCardCreator().getDeckOfCard();
+
         Dice dice = new Dice(1, 6);*/
 
 
-       // Game game = new Game(board, playerList, successCondition, dice);
-        //game.startGame();
-
-        GameConfiguration gameConfiguration= new ObjectMapper().readValue( new FileReader(new File("test.json")),GameConfiguration.class);
-        //String json = new ObjectMapper().writeValueAsString(gameConfiguration);
+        //Game game = new Game(board, playerList, successCondition, cardList,dice);
+        // ObjectMapper mapper = new ObjectMapper();
+        //String json = mapper.writeValueAsString(game);
         //System.out.println(json);
+
+
+        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("snake.json")), GameConfiguration.class);
         Game game = new Game(gameConfiguration);
         game.startGame();
-
-        //  GameConfiguration gameConfiguration= new ObjectMapper().readValue(json,GameConfiguration.class);
-        //  Game game2 = new Game(gameConfiguration);
 
 
     }

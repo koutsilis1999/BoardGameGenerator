@@ -163,28 +163,94 @@
   },
   "playerList": [
     {
-      "name": "Konstantinos",
-      "currentSquare": {
-        "@type": "SimpleSquare"
-      },
-      "playersTurn": true,
-      "power": 0
-    },
-    {
       "name": "Greg",
-      "currentSquare": {
-        "@type": "SimpleSquare"
-      },
       "playersTurn": true,
       "power": 0
     },
     {
       "name": "Alex",
-      "currentSquare": {
-        "@type": "SimpleSquare"
-      },
       "playersTurn": true,
       "power": 0
+    }
+  ],
+  "currentPlayer": {
+    "name": "Konstantinos",
+    "currentSquare": {
+      "@type": "SimpleSquare"
+    },
+    "playersTurn": true,
+    "power": 0
+  },
+  "cardDeck": [
+    {
+      "@type": "CardPower",
+      "power": 11
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 12
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 12
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 9
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 6
+    },
+    {
+      "@type": "CardPower",
+      "power": 7
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 10
+    },
+    {
+      "@type": "CardPower",
+      "power": 13
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardPower",
+      "power": 9
     }
   ],
   "successCondition": {

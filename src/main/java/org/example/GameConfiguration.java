@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.model.Dice;
 import org.example.model.boards.Board;
+import org.example.model.cards.Card;
 import org.example.model.players.Player;
 import org.example.model.successCondition.SuccessCondition;
 
@@ -12,12 +13,16 @@ public class GameConfiguration {
     private Board board;
     private SuccessCondition successCondition;
     private LinkedList<Player> playerList;
+    private Player currentPlayer;
+    private LinkedList<Card> cardDeck;
     private Dice dice;
 
-    public GameConfiguration(Board board, SuccessCondition successCondition,LinkedList<Player> playerList, Dice dice) {
+    public GameConfiguration(Board board, SuccessCondition successCondition, LinkedList<Player> playerList, Player currentPlayer, LinkedList<Card> cardDeck, Dice dice) {
         this.board = board;
         this.successCondition = successCondition;
         this.playerList = playerList;
+        this.currentPlayer = currentPlayer;
+        this.cardDeck = cardDeck;
         this.dice = dice;
     }
 
@@ -56,4 +61,19 @@ public class GameConfiguration {
         this.dice = dice;
     }
 
+    public LinkedList<Card> getCardDeck() {
+        return cardDeck;
+    }
+
+    public void setCardDeck(LinkedList<Card> cardDeck) {
+        this.cardDeck = cardDeck;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 }

@@ -10,10 +10,21 @@ public class CardPower implements Card{
         this.power = power;
     }
 
+    public CardPower() {
+    }
+
     @Override
     public void action(Game game) {
         System.out.println("Power "+power);
         Player player = game.getCurrentPlayer();
         player.powerUp(power);
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
     }
 }

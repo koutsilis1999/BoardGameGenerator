@@ -1,35 +1,191 @@
 {
-    "numOfSquares": 50,
-    "boardType": "simple",
-    "successCondition": "SuccessConditionSnake",
-    "specialSquares": [
+  "board": {
+    "@type": "BoardLine",
+    "squareList": [
       {
-        "type": "SquareMovement",
-        "steps": 10,
-        "position": 15
+        "@type": "SimpleSquare"
       },
       {
-        "type": "SquareLoseTurn",
-        "position": 20
+        "@type": "SimpleSquare"
       },
       {
-        "type": "SquareMovement",
-        "steps": -5,
-        "position": 45
-      }
-    ],
-    "players": [
-      {
-        "name": "Greg",
-        "position": 0
+        "@type": "SimpleSquare"
       },
       {
-        "name": "Alex",
-        "position": 0
+        "@type": "SimpleSquare"
       },
       {
-        "name": "Konstantinos",
-        "position": 0
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 8
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 5
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 5
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 9
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 5
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 8
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareMovement",
+        "steps": 6
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SimpleSquare"
       }
     ]
+  },
+  "playerList": [
+    {
+      "name": "Greg",
+      "playersTurn": true,
+      "power": 0
+    },
+    {
+      "name": "Alex",
+      "playersTurn": true,
+      "power": 0
+    }
+  ],
+  "currentPlayer": {
+    "name": "Konstantinos",
+    "currentSquare": {
+      "@type": "SimpleSquare"
+    },
+    "playersTurn": true,
+    "power": 0
+  },
+  "successCondition": {
+    "@type": "SuccessConditionSnake"
+  },
+  "dice": {
+    "numberOfDices": 1,
+    "diceCapacity": 6
+  }
 }

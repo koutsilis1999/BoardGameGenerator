@@ -5,6 +5,7 @@ import org.example.GameConfiguration;
 import org.example.Status;
 import org.example.model.Dice;
 import org.example.model.boards.Board;
+import org.example.model.cards.Card;
 import org.example.model.players.Player;
 import org.example.PlayerList;
 import org.example.model.successCondition.SuccessCondition;
@@ -22,20 +23,24 @@ public class Game {
     private SuccessCondition successCondition;
     private Dice dice;
     private Player winner;
+    private LinkedList<Card> cardDeck;
 
     public Game() {
     }
 
-    public Game(Board board, List<Player> playerList, SuccessCondition successCondition, Dice dice) {
+    public Game(Board board, List<Player> playerList, SuccessCondition successCondition, List<Card> cardDeck, Dice dice) {
         this.board = board;
-        this.playerList= new PlayerList(playerList);
+        this.playerList = new PlayerList(playerList);
         this.successCondition = successCondition;
+        this.cardDeck = (LinkedList<Card>) cardDeck;
         this.dice = dice;
     }
+
     public Game(GameConfiguration gameConfiguration) {
-        this.board=gameConfiguration.getBoard();
-        this.playerList= new PlayerList(gameConfiguration.getPlayerList());
+        this.board = gameConfiguration.getBoard();
+        this.playerList = new PlayerList(gameConfiguration.getCurrentPlayer(),gameConfiguration.getPlayerList());
         this.successCondition = gameConfiguration.getSuccessCondition();
+        this.cardDeck = gameConfiguration.getCardDeck();
         this.dice = gameConfiguration.getDice();
     }
 
@@ -47,6 +52,7 @@ public class Game {
         playerList.currentPlayerLoseTurn();
     }
 
+    @JsonIgnore
     public int getCurrentPlayersPosition() {
         //TODO: FIX IT
         return board.getSquareList().indexOf(playerList.getCurrentPlayersSquare()) + 1;
@@ -55,7 +61,8 @@ public class Game {
     public Board getBoard() {
         return board;
     }
-@JsonIgnore
+
+
     public Player getCurrentPlayer() {
         return playerList.getCurrentPlayer();
     }
@@ -104,4 +111,16 @@ public class Game {
     }
     // abstract public void finishGame();
 
+    public LinkedList<Card> getCardDeck() {
+        return cardDeck;
+    }
+
+    public void setCardDeck(LinkedList<Card> cardDeck) {
+        this.cardDeck = cardDeck;
+    }
+
+    @JsonIgnore
+    public Card getCard() {
+        return cardDeck.pop();
+    }
 }
