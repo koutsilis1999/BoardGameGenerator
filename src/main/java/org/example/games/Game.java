@@ -8,7 +8,7 @@ import org.example.model.boards.Board;
 import org.example.model.cards.Card;
 import org.example.model.players.Player;
 import org.example.PlayerList;
-import org.example.model.successCondition.SuccessCondition;
+import org.example.model.successCondition.Condition;
 
 
 import java.util.LinkedList;
@@ -20,15 +20,14 @@ public class Game {
 
     private Board board;
     private PlayerList playerList;
-    private SuccessCondition successCondition;
+    private Condition successCondition;
     private Dice dice;
-    private Player winner;
     private LinkedList<Card> cardDeck;
 
     public Game() {
     }
 
-    public Game(Board board, List<Player> playerList, SuccessCondition successCondition, List<Card> cardDeck, Dice dice) {
+    public Game(Board board, List<Player> playerList, Condition successCondition, List<Card> cardDeck, Dice dice) {
         this.board = board;
         this.playerList = new PlayerList(playerList);
         this.successCondition = successCondition;
@@ -38,7 +37,7 @@ public class Game {
 
     public Game(GameConfiguration gameConfiguration) {
         this.board = gameConfiguration.getBoard();
-        this.playerList = new PlayerList(gameConfiguration.getCurrentPlayer(),gameConfiguration.getPlayerList());
+        this.playerList = new PlayerList(gameConfiguration.getCurrentPlayer(), gameConfiguration.getPlayerList());
         this.successCondition = gameConfiguration.getSuccessCondition();
         this.cardDeck = gameConfiguration.getCardDeck();
         this.dice = gameConfiguration.getDice();
@@ -67,8 +66,12 @@ public class Game {
         return playerList.getCurrentPlayer();
     }
 
-    public LinkedList getPlayerList() {
-        return playerList.getPlayerList();
+    public LinkedList getPlayerLinkedList() {
+        return playerList.getPlayerLinkedList();
+    }
+
+    public PlayerList getPlayerList() {
+        return this.playerList;
     }
 
     public void startGame() {
@@ -86,19 +89,19 @@ public class Game {
             System.out.println(player.getName() + " rolled " + dicethrow);
             board.movePlayer(this, dicethrow);
             System.out.println(player.getName() + " is at position " + this.getCurrentPlayersPosition() + "\n");
+            System.out.println(player.getCurrentSquare().getMessage());
             status = successCondition.getSuccessCondition(this);
-            if (status == Status.FINISH) {
-                winner = player;
-            }
-            player = playerList.getNextPlayer();
+            if (!this.getPlayerLinkedList().isEmpty())
+                player = playerList.getNextPlayer();
         } while (status != Status.FINISH);
+        successCondition.showWinner();
     }
 
-    public SuccessCondition getSuccessCondition() {
+    public Condition getSuccessCondition() {
         return successCondition;
     }
 
-    public void setSuccessCondition(SuccessCondition successCondition) {
+    public void setSuccessCondition(Condition successCondition) {
         this.successCondition = successCondition;
     }
 

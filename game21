@@ -1,163 +1,156 @@
 {
   "board": {
-    "@type": "BoardLine",
+    "@type": "BoardCircular",
     "squareList": [
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 8
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 5
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 5
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 9
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 5
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 8
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 6
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type":"SquareCard"
       },
       {
         "@type": "SimpleSquare"
+      },
+      {
+        "@type":"SquareCard"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type":"SquareCard"
       }
     ]
   },
@@ -181,8 +174,80 @@
     "playersTurn": true,
     "power": 0
   },
+  "cardDeck": [
+    {
+      "@type": "CardPower",
+      "power": 11
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 12
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 12
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 9
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 6
+    },
+    {
+      "@type": "CardPower",
+      "power": 7
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 10
+    },
+    {
+      "@type": "CardPower",
+      "power": 13
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardPower",
+      "power": 9
+    }
+  ],
   "successCondition": {
-    "@type": "ConditionSnake"
+    "@type": "Condition21"
   },
   "dice": {
     "numberOfDices": 1,

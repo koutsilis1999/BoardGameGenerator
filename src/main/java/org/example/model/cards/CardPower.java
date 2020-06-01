@@ -1,10 +1,11 @@
 package org.example.model.cards;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.games.Game;
 import org.example.model.players.Player;
 
-public class CardPower implements Card{
-    private int power=0;
+public class CardPower implements Card {
+    private int power;
 
     public CardPower(int power) {
         this.power = power;
@@ -15,9 +16,14 @@ public class CardPower implements Card{
 
     @Override
     public void action(Game game) {
-        System.out.println("Power "+power);
         Player player = game.getCurrentPlayer();
         player.powerUp(power);
+    }
+
+    @JsonIgnore
+    @Override
+    public String getMessage() {
+        return "Power +" + power;
     }
 
     public int getPower() {

@@ -1,13 +1,5 @@
 package org.example.games;
 
-import org.example.*;
-import org.example.model.Dice;
-import org.example.model.boards.Board;
-import org.example.model.players.Player;
-import org.example.model.successCondition.SuccessConditionSnake;
-
-import java.util.*;
-
 public class GameSnake extends Game {
 /*
     public GameSnake(Board board, int numOfPlayers) {

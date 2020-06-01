@@ -9,21 +9,20 @@ import org.example.games.Game;
 import org.example.model.cards.Card;
 
 public class SquareCard implements Square{
-
+    private Card card;
     public SquareCard() {
     }
 
     @Override
     public void action(Game game) {
-        Card card = game.getCard();
+        card = game.getCard();
         card.action(game);
     }
 
     @JsonIgnore
     @Override
     public String getMessage() {
-        //return card.getMessage
-        return null;
+        return card.getMessage();
     }
 
 }

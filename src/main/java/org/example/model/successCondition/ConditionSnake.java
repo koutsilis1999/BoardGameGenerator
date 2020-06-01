@@ -6,8 +6,10 @@ import org.example.games.Game;
 import org.example.model.players.Player;
 import org.example.Status;
 
-public class SuccessConditionSnake implements SuccessCondition {
-    public SuccessConditionSnake() {
+public class ConditionSnake implements Condition {
+    private Player winner;
+
+    public ConditionSnake() {
     }
 
     @JsonIgnore
@@ -17,9 +19,16 @@ public class SuccessConditionSnake implements SuccessCondition {
         Board board = game.getBoard();
 
         if (player.getCurrentSquare() == board.getLastSquare()) {
+            winner = player;
             return Status.FINISH;
         } else {
             return Status.PLAY;
         }
     }
+
+    @Override
+    public void showWinner() {
+        System.out.println("Congratulations "+ winner.getName() + " you WON the game!!!");
+    }
+
 }

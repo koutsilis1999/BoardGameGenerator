@@ -1,17 +1,5 @@
 package org.example.games;
 
-import org.example.model.boards.Board;
-import org.example.model.Dice;
-import org.example.PlayerList;
-import org.example.model.players.Player;
-import org.example.model.successCondition.SuccessCondition;
-import org.example.model.successCondition.SuccessCondition21;
-import org.example.Status;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 import static java.lang.Math.abs;
 
 public class Game21 extends Game {

@@ -34,7 +34,6 @@ public class PlayerList {
             playerList.offer(currentPlayer);
         }
         currentPlayer = playerList.poll();
-        assert currentPlayer != null;
         if (!currentPlayer.isPlayersTurn() && currentPlayer != null) {
             currentPlayer.setPlayersTurn(true);
             return getNextPlayer();
@@ -61,7 +60,7 @@ public class PlayerList {
         currentPlayer.setPlayersTurn(false);
     }
 
-    public LinkedList<Player> getPlayerList() {
+    public LinkedList<Player> getPlayerLinkedList() {
         return playerList;
     }
 

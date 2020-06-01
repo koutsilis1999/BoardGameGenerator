@@ -20,6 +20,9 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 public abstract class Board {
     protected List<Square> squareList;
 
+    public Board() {
+    }
+
     @JsonGetter
     public List getSquareList() {
         return this.squareList;

@@ -1,27 +1,11 @@
 package org.example;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.games.Game;
-import org.example.model.Dice;
-import org.example.model.boards.Board;
-import org.example.model.boards.BoardLine;
-import org.example.model.cards.Card;
-import org.example.model.players.Player;
-import org.example.model.squares.SimpleSquare;
-import org.example.model.squares.Square;
-import org.example.model.squares.SquareMovement;
-import org.example.model.successCondition.SuccessCondition;
-import org.example.model.successCondition.SuccessConditionSnake;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 
 public class App {
@@ -36,20 +20,18 @@ public class App {
         playerList.add(player3);
         SuccessCondition successCondition = new SuccessConditionSnake();
         List<Card> cardList = new DeckCardCreator().getDeckOfCard();
-
         Dice dice = new Dice(1, 6);*/
 
 
-        //Game game = new Game(board, playerList, successCondition, cardList,dice);
+        // Game game = new Game(board, playerList, successCondition, cardList, dice);
         // ObjectMapper mapper = new ObjectMapper();
-        //String json = mapper.writeValueAsString(game);
-        //System.out.println(json);
+        // String json = mapper.writeValueAsString();
+        // System.out.println(json);
 
 
-        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("snake.json")), GameConfiguration.class);
+        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("game21")), GameConfiguration.class);
         Game game = new Game(gameConfiguration);
         game.startGame();
-
 
     }
 }

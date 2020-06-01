@@ -254,7 +254,7 @@
     }
   ],
   "successCondition": {
-    "@type": "SuccessConditionSnake"
+    "@type": "ConditionSnake"
   },
   "dice": {
     "numberOfDices": 1,
