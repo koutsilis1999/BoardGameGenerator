@@ -1,7 +1,7 @@
 package org.example;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.model.players.Player;
+import org.example.model.Player;
 import org.example.model.squares.Square;
 
 import java.util.LinkedList;

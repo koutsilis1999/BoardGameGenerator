@@ -11,6 +11,7 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = CardLoseTurn.class, name = "CardLoseTurn"),
         @JsonSubTypes.Type(value = CardPower.class, name = "CardPower"),
+        @JsonSubTypes.Type(value = CardColor.class, name = "CardColor")
 })
 public interface Card {
     void action(Game game);

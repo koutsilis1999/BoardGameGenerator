@@ -2,10 +2,15 @@ package org.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.games.Game;
+import org.example.model.Color;
+import org.example.model.cards.Card;
+import org.example.model.cards.CardColor;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class App {
@@ -18,20 +23,21 @@ public class App {
         playerList.add(player1);
         playerList.add(player2);
         playerList.add(player3);
-        SuccessCondition successCondition = new SuccessConditionSnake();
+        Condition successCondition = new ConditionSnake();
         List<Card> cardList = new DeckCardCreator().getDeckOfCard();
-        Dice dice = new Dice(1, 6);*/
+        Dice dice = new Dice(1, 6);
 
 
-        // Game game = new Game(board, playerList, successCondition, cardList, dice);
-        // ObjectMapper mapper = new ObjectMapper();
-        // String json = mapper.writeValueAsString();
-        // System.out.println(json);
+         Game game = new Game(board, playerList, successCondition, cardList, dice);
+         ObjectMapper mapper = new ObjectMapper();
+         String json = mapper.writeValueAsString(game);
+         System.out.println(json); */
 
 
-        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("game21")), GameConfiguration.class);
+        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("test.json")), GameConfiguration.class);
         Game game = new Game(gameConfiguration);
         game.startGame();
+
 
     }
 }

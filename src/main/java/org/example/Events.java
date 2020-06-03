@@ -1,7 +1,7 @@
 package org.example;
 
 
-import org.example.model.players.Player;
+import org.example.model.Player;
 
 public class Events {
 

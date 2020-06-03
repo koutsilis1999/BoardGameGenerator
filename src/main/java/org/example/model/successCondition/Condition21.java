@@ -3,7 +3,7 @@ package org.example.model.successCondition;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.games.Game;
 import org.example.Status;
-import org.example.model.players.Player;
+import org.example.model.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public class Condition21 implements Condition {
 
     @Override
     public void showWinner() {
-        if (pausedPlayers != null) {
+        if (pausedPlayers.size() != 0) {
             winner = pausedPlayers.get(0);
             int min = abs(winner.getPower() - limit);
             for (Player player1 : pausedPlayers) {

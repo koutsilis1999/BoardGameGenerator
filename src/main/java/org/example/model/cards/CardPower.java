@@ -2,7 +2,7 @@ package org.example.model.cards;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.games.Game;
-import org.example.model.players.Player;
+import org.example.model.Player;
 
 public class CardPower implements Card {
     private int power;

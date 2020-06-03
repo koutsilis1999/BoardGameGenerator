@@ -3,9 +3,8 @@ package org.example.model.boards;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.example.games.Game;
-import org.example.model.players.Player;
+import org.example.model.Player;
 import org.example.model.squares.Square;
 
 

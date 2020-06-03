@@ -20,9 +20,7 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
         @JsonSubTypes.Type(value =  SquareLoseTurn.class, name = "SquareLoseTurn")
 })
 public interface Square {
-    //na ginei abstract kai na exoume ena String gia ola ?
     void action(Game game);
-
     String getMessage();
 
 }

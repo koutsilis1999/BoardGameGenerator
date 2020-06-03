@@ -6,7 +6,7 @@ import org.example.Status;
 import org.example.model.Dice;
 import org.example.model.boards.Board;
 import org.example.model.cards.Card;
-import org.example.model.players.Player;
+import org.example.model.Player;
 import org.example.PlayerList;
 import org.example.model.successCondition.Condition;
 

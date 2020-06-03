@@ -1,11 +1,8 @@
 package org.example.model.boards;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.*;
 import org.example.games.Game;
-import org.example.model.players.Player;
+import org.example.model.Player;
 import org.example.model.squares.Square;
 
 import java.util.List;
@@ -33,5 +30,17 @@ public class BoardLine extends Board {
             player.setCurrentSquare(squareList.get(position));
         }
         player.getCurrentSquare().action(game);
+    }
+
+    @Override
+    @JsonGetter
+    public List getSquareList() {
+        return this.squareList;
+    }
+
+    @Override
+    @JsonSetter
+    public void setSquareList(List<Square> squareList) {
+        this.squareList = squareList;
     }
 }

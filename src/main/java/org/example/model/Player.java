@@ -1,12 +1,16 @@
-package org.example.model.players;
+package org.example.model;
 
+import org.example.model.cards.Card;
 import org.example.model.squares.Square;
+
+import java.util.List;
 
 public class Player {
     private String name;
     private Square currentSquare;
     private boolean playersTurn = true;
     private int power = 0;
+    private List<Card> cardList;
 
 
     public Player(String name) {
@@ -60,5 +64,19 @@ public class Player {
 
     public void setPower(int power) {
         this.power = power;
+    }
+
+    public List<Card> getCardList() {
+        return cardList;
+    }
+
+    public void setCardList(List<Card> cardList) {
+        this.cardList = cardList;
+    }
+    public Card getPlayerCard(int i){
+        return cardList.remove(i);
+    }
+    public void setPlayerCard(Card card){
+        cardList.add(card);
     }
 }
