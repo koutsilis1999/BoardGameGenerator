@@ -9,6 +9,7 @@ import org.example.model.Player;
 import org.example.model.squares.Square;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class SimpleEvents implements Events {
@@ -16,7 +17,7 @@ public class SimpleEvents implements Events {
 
 
     public void winnerEvent(Player winner) {
-        System.out.println("\nCongratulations " + winner.getName() + " you WON the game!!!");
+        System.out.println("\nCongratulations " + winner.getName() + " you WON the game!!!\n");
     }
 
     public void diceResult(int diceNum) {
@@ -60,5 +61,32 @@ public class SimpleEvents implements Events {
             return Status.PLAY;
         }
 
+    }
+
+    @Override
+    public void separator() {
+        System.out.println("=============================================\n");
+    }
+
+    @Override
+    public void playersPointsEvent(List<Player> playerList) {
+        for (Player player1 : playerList) {
+            System.out.println(player1.getName() + " points " + player1.getPower());
+        }
+        System.out.println("\n");
+    }
+
+    @Override
+    public void pausedPlayersEvent(List<Player> playerList) {
+        System.out.println("Paused Players");
+        separator();
+        playersPointsEvent(playerList);
+    }
+
+    @Override
+    public void executedPlayersEvent(List<Player> playerList) {
+        System.out.println("Executed Players");
+        separator();
+        playersPointsEvent(playerList);
     }
 }

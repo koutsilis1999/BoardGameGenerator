@@ -29,7 +29,7 @@ public class App {
          String json = mapper.writeValueAsString(game);
          System.out.println(json); */
 
-        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("snake.json")), GameConfiguration.class);
+        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("game21")), GameConfiguration.class);
         Game game = new Game(gameConfiguration);
         game.startGame();
 

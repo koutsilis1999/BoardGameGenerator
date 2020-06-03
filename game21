@@ -6,151 +6,151 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type":"SquareCard"
+        "@type": "SquareCard"
       }
     ]
   },
@@ -177,37 +177,18 @@
   "cardDeck": [
     {
       "@type": "CardPower",
-      "power": 11
+      "power": 2
     },
     {
       "@type": "CardLoseTurn"
     },
     {
       "@type": "CardPower",
-      "power": 12
-    },
-    {
-      "@type": "CardLoseTurn"
-    },
-    {
-      "@type": "CardLoseTurn"
+      "power": 4
     },
     {
       "@type": "CardPower",
-      "power": 12
-    },
-    {
-      "@type": "CardLoseTurn"
-    },
-    {
-      "@type": "CardLoseTurn"
-    },
-    {
-      "@type": "CardPower",
-      "power": 9
-    },
-    {
-      "@type": "CardLoseTurn"
+      "power": 1
     },
     {
       "@type": "CardPower",
@@ -215,27 +196,128 @@
     },
     {
       "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 8
+    },
+    {
+      "@type": "CardPower",
+      "power": 6
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardPower",
       "power": 7
     },
     {
-      "@type": "CardLoseTurn"
-    },
-    {
-      "@type": "CardLoseTurn"
+      "@type": "CardPower",
+      "power": 1
     },
     {
       "@type": "CardLoseTurn"
     },
     {
       "@type": "CardPower",
-      "power": 10
+      "power": 2
     },
     {
       "@type": "CardPower",
-      "power": 13
+      "power": 6
+    },
+    {
+      "@type": "CardPower",
+      "power": 1
+    },
+    {
+      "@type": "CardPower",
+      "power": 4
+    },
+    {
+      "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardPower",
+      "power": 9
+    },
+    {
+      "@type": "CardPower",
+      "power": 2
     },
     {
       "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 4
+    },
+    {
+      "@type": "CardPower",
+      "power": 1
+    },
+    {
+      "@type": "CardPower",
+      "power": 6
+    },
+    {
+      "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 8
+    },
+    {
+      "@type": "CardPower",
+      "power": 6
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 5
+    },
+    {
+      "@type": "CardPower",
+      "power": 7
+    },
+    {
+      "@type": "CardPower",
+      "power": 1
+    },
+    {
+      "@type": "CardLoseTurn"
+    },
+    {
+      "@type": "CardPower",
+      "power": 2
+    },
+    {
+      "@type": "CardPower",
+      "power": 6
+    },
+    {
+      "@type": "CardPower",
+      "power": 1
+    },
+    {
+      "@type": "CardPower",
+      "power": 4
     },
     {
       "@type": "CardPower",

@@ -29,11 +29,12 @@ public class BoardLine extends Board {
         } else {
             player.setCurrentSquare(squareList.get(position));
         }
+        player.getCurrentSquare().action(game);
     }
 
     @Override
     @JsonGetter
-    public List getSquareList() {
+    public List<Square> getSquareList() {
         return this.squareList;
     }
 

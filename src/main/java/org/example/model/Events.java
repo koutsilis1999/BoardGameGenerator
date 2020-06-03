@@ -6,6 +6,7 @@ import org.example.model.Player;
 import org.example.model.squares.Square;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface Events {
     void winnerEvent(Player winner);
@@ -24,4 +25,9 @@ public interface Events {
 
     void squareEvent(Square square);
     Status saveEvent(Game game) throws IOException;
+    void separator();
+    void playersPointsEvent(List<Player> playerList);
+    void pausedPlayersEvent(List<Player> playerList);
+    void executedPlayersEvent(List<Player> playerList);
+
 }

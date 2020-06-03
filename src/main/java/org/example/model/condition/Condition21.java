@@ -1,9 +1,11 @@
-package org.example.model.successCondition;
+package org.example.model.condition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.Game;
 import org.example.Status;
+import org.example.model.Events;
 import org.example.model.Player;
+import org.example.model.SimpleEvents;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,7 @@ public class Condition21 implements Condition {
                 pausedPlayers.add(game.getPlayerList().removePlayer());
             }
         }
-        if (game.getPlayerLinkedList().size() == 0 && game.getPlayerList().getCurrentPlayer() == null) {
+        if (game.getPlayerLinkedList().size() == 0 && game.getPlayerList().getCurrentPlayer() == null || game.getCardDeck().isEmpty()) {
             return Status.FINISH;
         } else {
             return Status.PLAY;
@@ -45,6 +47,7 @@ public class Condition21 implements Condition {
 
     @Override
     public void showWinner() {
+        Events events = new SimpleEvents();
         if (pausedPlayers.size() != 0) {
             winner = pausedPlayers.get(0);
             int min = abs(winner.getPower() - limit);
@@ -54,18 +57,10 @@ public class Condition21 implements Condition {
                     winner = player1;
                 }
             }
-            System.out.println("Congrats " + winner.getName() + " you won!!!");
+            events.winnerEvent(winner);
         }
-        System.out.println("=============================================");
-        for (Player player1 : pausedPlayers) {
-            System.out.println(player1.getName() + " points " + player1.getPower());
-
-        }
-        System.out.println("\nExecuted Players");
-        System.out.println("=============================================");
-        for (Player player1 : executedPlayers) {
-            System.out.println(player1.getName() + " points " + player1.getPower());
-        }
+        events.pausedPlayersEvent(pausedPlayers);
+        events.executedPlayersEvent(executedPlayers);
     }
 
 }

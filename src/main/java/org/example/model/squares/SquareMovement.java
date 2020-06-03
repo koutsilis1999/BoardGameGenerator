@@ -23,7 +23,7 @@ public class SquareMovement implements Square {
     @JsonIgnore
     @Override
     public String getMessage() {
-        return "Wow, you proceed " + steps + " squares";
+        return "Wow, you move " + steps + " squares";
     }
 
     @JsonGetter

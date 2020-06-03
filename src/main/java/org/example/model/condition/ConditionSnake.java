@@ -1,4 +1,4 @@
-package org.example.model.successCondition;
+package org.example.model.condition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.model.Events;

@@ -6,165 +6,151 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 8
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 8
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 8
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 8
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 8
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 8
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 8
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 8
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 5
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 5
-      },
-      {
-        "@type": "SquareMovement",
-        "steps": 9
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 5
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 8
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SquareMovement",
-        "steps": 6
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareCard"
       },
       {
         "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareCard"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareCard"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareCard"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareCard"
+      },
+      {
+        "@type": "SimpleSquare"
+      },
+      {
+        "@type": "SquareCard"
       }
     ]
   },
@@ -189,24 +175,9 @@
     "power": 0
   },
   "cardDeck": [
-    {
-      "@type":"CardColor","color":"RED"
-    },
-    {
-      "@type":"CardColor","color":"RED"
-    },
-    {
-      "@type":"CardColor","color":"BLUE"
-    },
-    {
-      "@type":"CardColor","color":"YELLOW"
-    },
-    {
-      "@type":"CardColor","color":"GREEN"
-    }
   ],
   "condition": {
-    "@type": "ConditionSnake"
+    "@type": "Condition21"
   },
   "dice": {
     "numberOfDices": 1,

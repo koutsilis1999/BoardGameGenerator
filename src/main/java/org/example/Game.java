@@ -6,9 +6,11 @@ import org.example.model.SimpleEvents;
 import org.example.model.boards.Board;
 import org.example.model.cards.Card;
 import org.example.model.Player;
-import org.example.model.successCondition.Condition;
+import org.example.model.cards.CardPower;
+import org.example.model.condition.Condition;
 
 
+import java.util.EmptyStackException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -77,19 +79,17 @@ public class Game {
         Player player = playerList.getCurrentPlayer();
         Status status = Status.PLAY;
         Scanner scanner = new Scanner(System.in);
-        String input;
         SimpleEvents events = new SimpleEvents();
         int dicethrow;
 
 
         do {
             events.whoPlays(player);
-            input = scanner.nextLine();
+            scanner.nextLine();
             dicethrow = dice.rollDice();
             events.diceResult(dicethrow);
             board.movePlayer(this, dicethrow);
             events.squareEvent(player.getCurrentSquare());
-            player.getCurrentSquare().action(this);
             events.movePosition(this);
             status = condition.getCondition(this);
             if (!this.getPlayerLinkedList().isEmpty())
@@ -125,7 +125,11 @@ public class Game {
 
     @JsonIgnore
     public Card getCard() {
-        return cardDeck.pop();
+        try {
+            return cardDeck.pop();
+        }catch (Exception e){
+            return new CardPower();
+        }
     }
 
     public void setPlayersOnBoard() {

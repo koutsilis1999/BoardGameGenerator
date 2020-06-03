@@ -36,5 +36,6 @@ public class BoardCircular extends Board {
         } else {
             player.setCurrentSquare(squareList.get(position));
         }
+        player.getCurrentSquare().action(game);
     }
 }

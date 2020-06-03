@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.Game;
 import org.example.model.cards.Card;
 
-public class SquareCard implements Square{
+public class SquareCard implements Square {
     private Card card;
+
     public SquareCard() {
     }
 
@@ -19,7 +20,11 @@ public class SquareCard implements Square{
     @JsonIgnore
     @Override
     public String getMessage() {
-        return card.getMessage();
+        try {
+            return card.getMessage();
+        } catch (Exception e) {
+           return "There is no card";
+        }
     }
 
 }
