@@ -1,7 +1,7 @@
 package org.example.games;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.Events;
+import org.example.SimpleEvents;
 import org.example.GameConfiguration;
 import org.example.Status;
 import org.example.model.Dice;
@@ -80,17 +80,18 @@ public class Game {
         Status status = Status.PLAY;
         Scanner scanner = new Scanner(System.in);
         String input;
+        SimpleEvents events = new SimpleEvents();
         int dicethrow;
 
 
         do {
-            Events.whoPlays(player);
+            events.whoPlays(player);
             input = scanner.nextLine();
             dicethrow = dice.rollDice();
-            Events.diceResult(dicethrow);
+            events.diceResult(dicethrow);
             board.movePlayer(this, dicethrow);
-            Events.movePosition(this);
-            Events.Square(player.getCurrentSquare());
+            events.movePosition(this);
+            events.Square(player.getCurrentSquare());
             status = successCondition.getSuccessCondition(this);
             if (!this.getPlayerLinkedList().isEmpty())
                 player = playerList.getNextPlayer();

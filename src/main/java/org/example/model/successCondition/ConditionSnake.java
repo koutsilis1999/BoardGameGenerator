@@ -1,7 +1,7 @@
 package org.example.model.successCondition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.Events;
+import org.example.SimpleEvents;
 import org.example.model.boards.Board;
 import org.example.games.Game;
 import org.example.model.Player;
@@ -29,7 +29,7 @@ public class ConditionSnake implements Condition {
 
     @Override
     public void showWinner() {
-         Events.winnerEvent(winner);
+         SimpleEvents.winnerEvent(winner);
     }
 
 }

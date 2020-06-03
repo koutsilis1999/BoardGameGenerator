@@ -1,41 +1,23 @@
 package org.example;
 
-
 import org.example.games.Game;
 import org.example.model.Player;
 import org.example.model.squares.Square;
 
-public class Events {
+public interface Events {
+    void winnerEvent(Player winner);
 
-    public static void winnerEvent(Player winner) {
-        System.out.println("\n Congratulations  " + winner.getName() + " you WON the game!!!");
-    }
+    void diceResult(int diceNum);
 
-    public static void diceResult(int diceNum) {
-        System.out.println("You rolled " + diceNum);
-    }
+    void movePosition(Game game);
 
-    public static void movePosition(Game game) {
-        System.out.println(game.getCurrentPlayer().getName() + " is at position " + game.getCurrentPlayersPosition() + "\n");;
-    }
+    void whoPlays(Player player);
 
-    public static void whoPlays(Player player) {
-        System.out.println("\n" + player.getName() + " is currently playing , press enter to throw dice!");
-    }
+    void powerMove(int steps);
 
-    public static void powerMove(int steps) {
-        System.out.println("Wow, you proceed " + steps + " squares");
-    }
+    void powerChange(int power);
 
-    public static void powerChange(int power) {
-        System.out.println("Power= " + power);
-    }
+    void turnLose(Player player);
 
-    public static void turnLose(Player player) {
-        System.out.println(player.getName() + " loses next turn");
-    }
-
-    public static void Square(Square square) {
-        System.out.println(square.getMessage());
-    }
+    void Square(Square square);
 }
