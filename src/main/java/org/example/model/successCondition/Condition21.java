@@ -55,8 +55,8 @@ public class Condition21 implements Condition {
                 }
             }
             System.out.println("Congrats " + winner.getName() + " you won!!!");
-            System.out.println("=============================================");
         }
+        System.out.println("=============================================");
         for (Player player1 : pausedPlayers) {
             System.out.println(player1.getName() + " points " + player1.getPower());
 

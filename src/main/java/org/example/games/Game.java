@@ -1,6 +1,7 @@
 package org.example.games;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.example.Events;
 import org.example.GameConfiguration;
 import org.example.Status;
 import org.example.model.Dice;
@@ -83,13 +84,13 @@ public class Game {
 
 
         do {
-            System.out.println(player.getName() + " is currently playing , press enter to throw dice!");
+            Events.whoPlays(player);
             input = scanner.nextLine();
             dicethrow = dice.rollDice();
-            System.out.println(player.getName() + " rolled " + dicethrow);
+            Events.diceResult(dicethrow);
             board.movePlayer(this, dicethrow);
-            System.out.println(player.getName() + " is at position " + this.getCurrentPlayersPosition() + "\n");
-            System.out.println(player.getCurrentSquare().getMessage());
+            Events.movePosition(this);
+            Events.Square(player.getCurrentSquare());
             status = successCondition.getSuccessCondition(this);
             if (!this.getPlayerLinkedList().isEmpty())
                 player = playerList.getNextPlayer();
