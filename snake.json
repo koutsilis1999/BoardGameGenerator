@@ -15,7 +15,8 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 3
       },
       {
         "@type": "SimpleSquare"
@@ -33,7 +34,8 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": -4
       },
       {
         "@type": "SimpleSquare"
@@ -48,7 +50,8 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": -2
       },
       {
         "@type": "SimpleSquare"
@@ -79,7 +82,7 @@
       },
       {
         "@type": "SquareMovement",
-        "steps": 9
+        "steps": -3
       },
       {
         "@type": "SimpleSquare"
@@ -120,7 +123,8 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 4
       },
       {
         "@type": "SimpleSquare"
@@ -148,7 +152,8 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": -6
       },
       {
         "@type": "SimpleSquare"
@@ -181,7 +186,7 @@
     "playersTurn": true,
     "power": 0
   },
-  "successCondition": {
+  "condition": {
     "@type": "ConditionSnake"
   },
   "dice": {

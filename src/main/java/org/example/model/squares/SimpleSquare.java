@@ -2,7 +2,7 @@ package org.example.model.squares;
 
 
 import com.fasterxml.jackson.annotation.*;
-import org.example.games.Game;
+import org.example.Game;
 
 public class SimpleSquare implements Square {
 

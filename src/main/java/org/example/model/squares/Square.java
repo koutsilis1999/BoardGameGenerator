@@ -1,12 +1,9 @@
 package org.example.model.squares;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.example.games.Game;
-import org.example.model.boards.BoardCircular;
-import org.example.model.boards.BoardLine;
+import org.example.Game;
 
 import static com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY;
 import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;

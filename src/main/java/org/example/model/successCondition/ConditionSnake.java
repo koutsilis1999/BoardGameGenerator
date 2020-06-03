@@ -1,9 +1,10 @@
 package org.example.model.successCondition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.SimpleEvents;
+import org.example.model.Events;
+import org.example.model.SimpleEvents;
 import org.example.model.boards.Board;
-import org.example.games.Game;
+import org.example.Game;
 import org.example.model.Player;
 import org.example.Status;
 
@@ -15,7 +16,7 @@ public class ConditionSnake implements Condition {
 
     @JsonIgnore
     @Override
-    public Status getSuccessCondition(Game game) {
+    public Status getCondition(Game game)  {
         Player player = game.getCurrentPlayer();
         Board board = game.getBoard();
 
@@ -29,7 +30,8 @@ public class ConditionSnake implements Condition {
 
     @Override
     public void showWinner() {
-         SimpleEvents.winnerEvent(winner);
+        Events events = new SimpleEvents();
+         events.winnerEvent(winner);
     }
 
 }

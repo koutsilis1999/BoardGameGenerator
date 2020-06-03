@@ -2,7 +2,7 @@ package org.example.model.successCondition;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.example.games.Game;
+import org.example.Game;
 import org.example.Status;
 
 import static com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY;
@@ -14,6 +14,6 @@ import static com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME;
         @JsonSubTypes.Type(value = Condition21.class, name = "Condition21"),
 })
 public interface Condition {
-    public Status getSuccessCondition(Game game);
+    public Status getCondition(Game game);
     public void showWinner();
 }

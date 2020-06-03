@@ -2,11 +2,9 @@ package org.example.model.boards;
 
 
 import com.fasterxml.jackson.annotation.*;
-import org.example.games.Game;
-import org.example.model.squares.SimpleSquare;
+import org.example.Game;
 import org.example.model.squares.Square;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY;

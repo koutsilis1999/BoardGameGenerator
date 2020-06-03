@@ -10,15 +10,15 @@ import java.util.LinkedList;
 
 public class GameConfiguration {
     private Board board;
-    private Condition successCondition;
+    private Condition condition;
     private LinkedList<Player> playerList;
     private Player currentPlayer;
     private LinkedList<Card> cardDeck;
     private Dice dice;
 
-    public GameConfiguration(Board board, Condition successCondition, LinkedList<Player> playerList, Player currentPlayer, LinkedList<Card> cardDeck, Dice dice) {
+    public GameConfiguration(Board board, Condition condition, LinkedList<Player> playerList, Player currentPlayer, LinkedList<Card> cardDeck, Dice dice) {
         this.board = board;
-        this.successCondition = successCondition;
+        this.condition = condition;
         this.playerList = playerList;
         this.currentPlayer = currentPlayer;
         this.cardDeck = cardDeck;
@@ -36,12 +36,12 @@ public class GameConfiguration {
         this.board = board;
     }
 
-    public Condition getSuccessCondition() {
-        return successCondition;
+    public Condition getCondition() {
+        return condition;
     }
 
-    public void setSuccessCondition(Condition successCondition) {
-        this.successCondition = successCondition;
+    public void setCondition(Condition condition) {
+        this.condition = condition;
     }
 
     public LinkedList<Player> getPlayerList() {

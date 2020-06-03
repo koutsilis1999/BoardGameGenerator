@@ -6,25 +6,32 @@
         "@type": "SimpleSquare"
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
-        "@type": "SimpleSquare"
+        "@type": "SquareMovement",
+        "steps": 8
       },
       {
         "@type": "SimpleSquare"
@@ -198,7 +205,7 @@
       "@type":"CardColor","color":"GREEN"
     }
   ],
-  "successCondition": {
+  "condition": {
     "@type": "ConditionSnake"
   },
   "dice": {

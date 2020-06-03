@@ -3,7 +3,7 @@ package org.example.model.boards;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.example.games.Game;
+import org.example.Game;
 import org.example.model.Player;
 import org.example.model.squares.Square;
 
@@ -36,6 +36,5 @@ public class BoardCircular extends Board {
         } else {
             player.setCurrentSquare(squareList.get(position));
         }
-        player.getCurrentSquare().action(game);
     }
 }

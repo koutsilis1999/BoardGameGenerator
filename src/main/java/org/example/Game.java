@@ -1,14 +1,11 @@
-package org.example.games;
+package org.example;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.SimpleEvents;
-import org.example.GameConfiguration;
-import org.example.Status;
 import org.example.model.Dice;
+import org.example.model.SimpleEvents;
 import org.example.model.boards.Board;
 import org.example.model.cards.Card;
 import org.example.model.Player;
-import org.example.PlayerList;
 import org.example.model.successCondition.Condition;
 
 
@@ -21,17 +18,17 @@ public class Game {
 
     private Board board;
     private PlayerList playerList;
-    private Condition successCondition;
+    private Condition condition;
     private Dice dice;
     private LinkedList<Card> cardDeck;
 
     public Game() {
     }
 
-    public Game(Board board, List<Player> playerList, Condition successCondition, List<Card> cardDeck, Dice dice) {
+    public Game(Board board, List<Player> playerList, Condition condition, List<Card> cardDeck, Dice dice) {
         this.board = board;
         this.playerList = new PlayerList(playerList);
-        this.successCondition = successCondition;
+        this.condition = condition;
         this.cardDeck = (LinkedList<Card>) cardDeck;
         this.dice = dice;
     }
@@ -39,7 +36,7 @@ public class Game {
     public Game(GameConfiguration gameConfiguration) {
         this.board = gameConfiguration.getBoard();
         this.playerList = new PlayerList(gameConfiguration.getCurrentPlayer(), gameConfiguration.getPlayerList());
-        this.successCondition = gameConfiguration.getSuccessCondition();
+        this.condition = gameConfiguration.getCondition();
         this.cardDeck = gameConfiguration.getCardDeck();
         this.dice = gameConfiguration.getDice();
     }
@@ -67,7 +64,7 @@ public class Game {
         return playerList.getCurrentPlayer();
     }
 
-    public LinkedList getPlayerLinkedList() {
+    public LinkedList<Player> getPlayerLinkedList() {
         return playerList.getPlayerLinkedList();
     }
 
@@ -76,6 +73,7 @@ public class Game {
     }
 
     public void startGame() {
+        setPlayersOnBoard();
         Player player = playerList.getCurrentPlayer();
         Status status = Status.PLAY;
         Scanner scanner = new Scanner(System.in);
@@ -90,21 +88,22 @@ public class Game {
             dicethrow = dice.rollDice();
             events.diceResult(dicethrow);
             board.movePlayer(this, dicethrow);
+            events.squareEvent(player.getCurrentSquare());
+            player.getCurrentSquare().action(this);
             events.movePosition(this);
-            events.Square(player.getCurrentSquare());
-            status = successCondition.getSuccessCondition(this);
+            status = condition.getCondition(this);
             if (!this.getPlayerLinkedList().isEmpty())
                 player = playerList.getNextPlayer();
         } while (status != Status.FINISH);
-        successCondition.showWinner();
+        condition.showWinner();
     }
 
-    public Condition getSuccessCondition() {
-        return successCondition;
+    public Condition getCondition() {
+        return condition;
     }
 
-    public void setSuccessCondition(Condition successCondition) {
-        this.successCondition = successCondition;
+    public void setCondition(Condition condition) {
+        this.condition = condition;
     }
 
     public Dice getDice() {
@@ -127,5 +126,12 @@ public class Game {
     @JsonIgnore
     public Card getCard() {
         return cardDeck.pop();
+    }
+
+    public void setPlayersOnBoard() {
+        for (Player player1 : getPlayerLinkedList()) {
+            player1.setCurrentSquare(board.getFirstSquare());
+        }
+        getCurrentPlayer().setCurrentSquare(board.getFirstSquare());
     }
 }

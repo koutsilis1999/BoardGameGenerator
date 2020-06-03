@@ -1,7 +1,7 @@
 package org.example.model.successCondition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.games.Game;
+import org.example.Game;
 import org.example.Status;
 import org.example.model.Player;
 
@@ -22,7 +22,7 @@ public class Condition21 implements Condition {
 
     @JsonIgnore
     @Override
-    public Status getSuccessCondition(Game game) {
+    public Status getCondition(Game game) {
         Scanner scanner = new Scanner(System.in);
         String input;
         Player player = game.getCurrentPlayer();

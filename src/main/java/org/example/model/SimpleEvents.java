@@ -1,17 +1,22 @@
-package org.example;
+package org.example.model;
 
 
-import org.example.games.Game;
+import org.example.Game;
+import org.example.SaveGame;
+import org.example.Status;
+import org.example.model.Events;
 import org.example.model.Player;
 import org.example.model.squares.Square;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class SimpleEvents implements Events {
 
-    public SimpleEvents() {
-    }
+
 
     public void winnerEvent(Player winner) {
-        System.out.println("\n Congratulations  " + winner.getName() + " you WON the game!!!");
+        System.out.println("\nCongratulations " + winner.getName() + " you WON the game!!!");
     }
 
     public void diceResult(int diceNum) {
@@ -20,7 +25,6 @@ public class SimpleEvents implements Events {
 
     public void movePosition(Game game) {
         System.out.println(game.getCurrentPlayer().getName() + " is at position " + game.getCurrentPlayersPosition() + "\n");
-        ;
     }
 
     public void whoPlays(Player player) {
@@ -39,7 +43,22 @@ public class SimpleEvents implements Events {
         System.out.println(player.getName() + " loses next turn");
     }
 
-    public void Square(Square square) {
+    public void squareEvent(Square square) {
         System.out.println(square.getMessage());
+    }
+
+    @Override
+    public Status saveEvent(Game game) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String input;
+        System.out.println("Do you want to save the game");
+        input = scanner.nextLine();
+        if (input.equalsIgnoreCase("yes")) {
+            new SaveGame().save(game);
+            return Status.SAVE;
+        } else {
+            return Status.PLAY;
+        }
+
     }
 }

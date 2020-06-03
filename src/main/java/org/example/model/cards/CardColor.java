@@ -1,7 +1,7 @@
 package org.example.model.cards;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.example.games.Game;
+import org.example.Game;
 import org.example.model.Color;
 
 public class CardColor implements Card {

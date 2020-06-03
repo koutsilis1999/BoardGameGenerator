@@ -246,7 +246,7 @@
       "power": 9
     }
   ],
-  "successCondition": {
+  "condition": {
     "@type": "Condition21"
   },
   "dice": {

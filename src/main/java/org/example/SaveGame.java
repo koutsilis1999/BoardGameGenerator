@@ -1,7 +1,6 @@
 package org.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.games.Game;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +12,7 @@ public class SaveGame {
         gameConfiguration.setBoard(game.getBoard());
         gameConfiguration.setCurrentPlayer(game.getCurrentPlayer());
         gameConfiguration.setPlayerList(game.getPlayerLinkedList());
-        gameConfiguration.setSuccessCondition(game.getSuccessCondition());
+        gameConfiguration.setCondition(game.getCondition());
         gameConfiguration.setCardDeck(game.getCardDeck());
         gameConfiguration.setDice(game.getDice());
 
