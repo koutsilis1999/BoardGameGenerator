@@ -10,8 +10,8 @@ import java.util.Random;
 
 public class DeckCardCreator {
 
-    public LinkedList<Card> getDeckOfCard(){
-        LinkedList<Card> deckOfCards=new LinkedList<>();
+    public LinkedList<Card> getDeckOfCard() {
+        LinkedList<Card> deckOfCards = new LinkedList<>();
         Random random = new Random();
 
         for (int i = 0; i < 10; i++) {
@@ -19,7 +19,7 @@ public class DeckCardCreator {
         }
 
         for (int i = 10; i < 20; i++) {
-            deckOfCards.push(new CardPower(random.nextInt(13)+1));
+            deckOfCards.push(new CardPower(random.nextInt(13) + 1));
         }
         Collections.shuffle(deckOfCards);
         return deckOfCards;

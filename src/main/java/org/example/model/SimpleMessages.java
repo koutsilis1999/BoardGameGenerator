@@ -1,14 +1,9 @@
 package org.example.model;
 
-
 import org.example.Game;
-import org.example.SaveGame;
-import org.example.Status;
 import org.example.model.squares.Square;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
 
 public class SimpleMessages implements Messages {
 

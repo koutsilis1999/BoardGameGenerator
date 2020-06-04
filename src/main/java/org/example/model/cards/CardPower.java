@@ -23,7 +23,7 @@ public class CardPower implements Card {
     @JsonIgnore
     @Override
     public String getMessage() {
-        return "Power +" + power;
+        return "It's a PowerSquare , you get " + power + " Power";
     }
 
     public int getPower() {

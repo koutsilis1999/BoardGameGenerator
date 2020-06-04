@@ -73,10 +73,12 @@ public class Player {
     public void setCardList(List<Card> cardList) {
         this.cardList = cardList;
     }
-    public Card getPlayerCard(int i){
+
+    public Card getPlayerCard(int i) {
         return cardList.remove(i);
     }
-    public void setPlayerCard(Card card){
+
+    public void setPlayerCard(Card card) {
         cardList.add(card);
     }
 }

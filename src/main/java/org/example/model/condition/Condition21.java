@@ -2,13 +2,12 @@ package org.example.model.condition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.Game;
-import org.example.SaveGame;
+
 import org.example.Status;
 import org.example.model.Messages;
 import org.example.model.Player;
 import org.example.model.SimpleMessages;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
