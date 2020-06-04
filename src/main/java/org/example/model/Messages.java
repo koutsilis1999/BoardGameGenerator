@@ -8,7 +8,7 @@ import org.example.model.squares.Square;
 import java.io.IOException;
 import java.util.List;
 
-public interface Events {
+public interface Messages {
     void winnerEvent(Player winner);
 
     void diceResult(int diceNum);
@@ -24,10 +24,17 @@ public interface Events {
     void turnLose(Player player);
 
     void squareEvent(Square square);
-    Status saveEvent(Game game) throws IOException;
+
+
     void separator();
+
     void playersPointsEvent(List<Player> playerList);
+
     void pausedPlayersEvent(List<Player> playerList);
+
     void executedPlayersEvent(List<Player> playerList);
 
+    void loseMessage();
+
+    void continueMessage();
 }

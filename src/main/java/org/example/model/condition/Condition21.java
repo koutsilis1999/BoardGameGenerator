@@ -2,11 +2,13 @@ package org.example.model.condition;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.Game;
+import org.example.SaveGame;
 import org.example.Status;
-import org.example.model.Events;
+import org.example.model.Messages;
 import org.example.model.Player;
-import org.example.model.SimpleEvents;
+import org.example.model.SimpleMessages;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,12 +29,13 @@ public class Condition21 implements Condition {
     public Status getCondition(Game game) {
         Scanner scanner = new Scanner(System.in);
         String input;
+        Messages messages = new SimpleMessages();
         Player player = game.getCurrentPlayer();
         if (player.getPower() > limit) {
-            System.out.println("Oops you lost \n");
+            messages.loseMessage();
             executedPlayers.add(game.getPlayerList().removePlayer());
         } else {
-            System.out.println("Do you want to continue playing ?");
+            messages.continueMessage();
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("no")) {
                 pausedPlayers.add(game.getPlayerList().removePlayer());
@@ -47,7 +50,7 @@ public class Condition21 implements Condition {
 
     @Override
     public void showWinner() {
-        Events events = new SimpleEvents();
+        Messages messages = new SimpleMessages();
         if (pausedPlayers.size() != 0) {
             winner = pausedPlayers.get(0);
             int min = abs(winner.getPower() - limit);
@@ -57,10 +60,10 @@ public class Condition21 implements Condition {
                     winner = player1;
                 }
             }
-            events.winnerEvent(winner);
+            messages.winnerEvent(winner);
         }
-        events.pausedPlayersEvent(pausedPlayers);
-        events.executedPlayersEvent(executedPlayers);
+        messages.pausedPlayersEvent(pausedPlayers);
+        messages.executedPlayersEvent(executedPlayers);
     }
 
 }

@@ -2,7 +2,8 @@ package org.example;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.example.model.Dice;
-import org.example.model.SimpleEvents;
+import org.example.model.Messages;
+import org.example.model.SimpleMessages;
 import org.example.model.boards.Board;
 import org.example.model.cards.Card;
 import org.example.model.Player;
@@ -10,7 +11,7 @@ import org.example.model.cards.CardPower;
 import org.example.model.condition.Condition;
 
 
-import java.util.EmptyStackException;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -43,6 +44,29 @@ public class Game {
         this.dice = gameConfiguration.getDice();
     }
 
+    public void startGame()  {
+        setPlayersOnBoard();
+        Player player = playerList.getCurrentPlayer();
+        Status status = Status.PLAY;
+        Scanner scanner = new Scanner(System.in);
+        Messages messages = new SimpleMessages();
+        int dicethrow;
+
+        do {
+            messages.whoPlays(player);
+            scanner.nextLine();
+            dicethrow = dice.rollDice();
+            messages.diceResult(dicethrow);
+            board.movePlayer(this, dicethrow);
+            messages.squareEvent(player.getCurrentSquare());
+            messages.movePosition(this);
+            status = condition.getCondition(this);
+            if (!this.getPlayerLinkedList().isEmpty())
+                player = playerList.getNextPlayer();
+        } while (status != Status.FINISH);
+        condition.showWinner();
+    }
+
     public void moveCurrentPayer(int steps) {
         board.movePlayer(this, steps);
     }
@@ -53,7 +77,7 @@ public class Game {
 
     @JsonIgnore
     public int getCurrentPlayersPosition() {
-        //TODO: FIX IT
+
         return board.getSquareList().indexOf(playerList.getCurrentPlayersSquare()) + 1;
     }
 
@@ -72,30 +96,6 @@ public class Game {
 
     public PlayerList getPlayerList() {
         return this.playerList;
-    }
-
-    public void startGame() {
-        setPlayersOnBoard();
-        Player player = playerList.getCurrentPlayer();
-        Status status = Status.PLAY;
-        Scanner scanner = new Scanner(System.in);
-        SimpleEvents events = new SimpleEvents();
-        int dicethrow;
-
-
-        do {
-            events.whoPlays(player);
-            scanner.nextLine();
-            dicethrow = dice.rollDice();
-            events.diceResult(dicethrow);
-            board.movePlayer(this, dicethrow);
-            events.squareEvent(player.getCurrentSquare());
-            events.movePosition(this);
-            status = condition.getCondition(this);
-            if (!this.getPlayerLinkedList().isEmpty())
-                player = playerList.getNextPlayer();
-        } while (status != Status.FINISH);
-        condition.showWinner();
     }
 
     public Condition getCondition() {
@@ -123,11 +123,10 @@ public class Game {
         this.cardDeck = cardDeck;
     }
 
-    @JsonIgnore
     public Card getCard() {
         try {
             return cardDeck.pop();
-        }catch (Exception e){
+        } catch (Exception e) {
             return new CardPower();
         }
     }

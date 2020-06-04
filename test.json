@@ -174,7 +174,8 @@
     "playersTurn": true,
     "power": 0
   },
-  "cardDeck": [
+  "cardDeck": [{"@type": "CardColor"},
+    {"@type":"CardColor","color":"BLUE"}
   ],
   "condition": {
     "@type": "Condition21"

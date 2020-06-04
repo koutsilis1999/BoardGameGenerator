@@ -4,16 +4,13 @@ package org.example.model;
 import org.example.Game;
 import org.example.SaveGame;
 import org.example.Status;
-import org.example.model.Events;
-import org.example.model.Player;
 import org.example.model.squares.Square;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-public class SimpleEvents implements Events {
-
+public class SimpleMessages implements Messages {
 
 
     public void winnerEvent(Player winner) {
@@ -48,20 +45,6 @@ public class SimpleEvents implements Events {
         System.out.println(square.getMessage());
     }
 
-    @Override
-    public Status saveEvent(Game game) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        System.out.println("Do you want to save the game");
-        input = scanner.nextLine();
-        if (input.equalsIgnoreCase("yes")) {
-            new SaveGame().save(game);
-            return Status.SAVE;
-        } else {
-            return Status.PLAY;
-        }
-
-    }
 
     @Override
     public void separator() {
@@ -89,4 +72,15 @@ public class SimpleEvents implements Events {
         separator();
         playersPointsEvent(playerList);
     }
+
+    @Override
+    public void loseMessage() {
+        System.out.println("Oops you lost \n");
+    }
+
+    @Override
+    public void continueMessage() {
+        System.out.println("Do you want to continue playing");
+    }
+
 }
