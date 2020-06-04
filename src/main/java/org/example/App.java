@@ -15,8 +15,13 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("snake.json")), GameConfiguration.class);
-        Game game = new Game(gameConfiguration);
-        game.startGame();
+        try {
+            GameConfiguration gameConfiguration = new ObjectMapper().readValue(new FileReader(new File("test.json")), GameConfiguration.class);
+            Game game = new Game(gameConfiguration);
+            game.startGame();
+        }catch (Exception e){
+            System.out.println("Problem reading game");
+        }
+
     }
 }
