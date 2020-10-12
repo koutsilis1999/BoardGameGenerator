@@ -5,7 +5,6 @@ import org.example.Status;
 import org.example.model.Player;
 import org.example.model.squares.Square;
 
-import java.io.IOException;
 import java.util.List;
 
 public interface Messages {

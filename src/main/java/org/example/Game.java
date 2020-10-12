@@ -11,7 +11,6 @@ import org.example.model.cards.CardPower;
 import org.example.model.condition.Condition;
 
 
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -44,7 +43,7 @@ public class Game {
         this.dice = gameConfiguration.getDice();
     }
 
-    public void startGame()  {
+    public void startGame() {
         setPlayersOnBoard();
         Player player = playerList.getCurrentPlayer();
         Status status = Status.PLAY;
