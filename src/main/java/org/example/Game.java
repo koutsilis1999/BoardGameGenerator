@@ -112,7 +112,6 @@ public class Game {
     public void setDice(Dice dice) {
         this.dice = dice;
     }
-    // abstract public void finishGame();
 
     public LinkedList<Card> getCardDeck() {
         return cardDeck;
